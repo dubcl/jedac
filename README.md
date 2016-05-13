@@ -1,6 +1,6 @@
 # JEDAC - yet another take on a DIY high-end USB Audio DAC
 
-## (THIS IS ONLY FOR PRESERVATION PURPOSE THE ORIGINAL URL IS http://users.abo.fi/jskata/JEDAC/ ALL CREDITS TO THE OWNER)
+## (THIS IS ONLY FOR PRESERVATION PURPOSE THE ORIGINAL URL IS img/ ALL CREDITS TO THE OWNER)
 
 If you are wondering what an Audio DAC is, this might not be the project page you are looking for.
 But for short, a DAC (Digital-Analog Converter) is a computer soundcard, in this case intended to give the maximal ([audiophile](https://en.wikipedia.org/wiki/Audiophile)) audio quality in terms of reconstruction accuracy, signal/noise level and channel separation.
@@ -48,27 +48,27 @@ In short:
 
 ### Circuit description
 
-![Entire circuit](http://users.abo.fi/jskata/JEDAC/kicad1.png "Entire circuit")
+![Entire circuit](img/kicad1.png "Entire circuit")
 Entire circuit
 
-![USB audio section with PCM2707](http://users.abo.fi/jskata/JEDAC/pcm2707.png "USB audio section with PCM2707")
+![USB audio section with PCM2707](img/pcm2707.png "USB audio section with PCM2707")
 USB audio section with PCM2707
 
 I realize the PCM2707 could be fed 3.3V externally and that could be an idea since it is already generated onboard, but it also has an internal regulator and only needs a capacitor to ground. Otherwise this is according to datasheet.
 Note C15 is a crystal, not a capacitor. KiCAD did not have the symbol.
 
-![PCM1794 DAC and TPS60501 regulator section](http://users.abo.fi/jskata/JEDAC/pcm1794.png "PCM1794 DAC and TPS60501 regulator section")
+![PCM1794 DAC and TPS60501 regulator section](img/pcm1794.png "PCM1794 DAC and TPS60501 regulator section")
 PCM1794 DAC and TPS60501 regulator section
 
 Again, this is like in the datasheet. R2 is not a resistor but a jumper for selecting sharp or slow (default, open, as on PupDAC) filter rolloff. Decided to use separate capacitors on VCOML/R as in the datasheet even though PupDAC uses only one.
 TPS60501 is a charge pump voltage regulator that feeds 3.3V to PCM1794.
 
-![Analog stage](http://users.abo.fi/jskata/JEDAC/analog.png "Analog stage")
+![Analog stage](img/analog.png "Analog stage")
 Analog stage
 
 Similar to PupDAC but with lower gain (R18, R19, R20, R21). This approach is somewhat different than TI's solution with I/U buffers, and there are many opinions which is better. Output is also buffered for two of the outputs, to make use of all four amplifiers in the chip.
 
-![LM2662 section](http://users.abo.fi/jskata/JEDAC/lm2662.png "LM2662 section")
+![LM2662 section](img/lm2662.png "LM2662 section")
 LM2662 section
 
 Charge pump voltage inverter, creates -5V from 5V, necessary for the output opamp. Here again, R22 is a jumper and not a resistor. If open, the switching frequency will be 20 kHz. If closed, the frequency will be 150 kHz but the efficiency will be lower. Your choice, I hear no problem at 20 kHz.
@@ -104,7 +104,7 @@ RCA connectors: used http://dx.com/p/dual-sockets-3-5mm-av-jack-connectors-red-b
 
 ### PCB design
 
-![PCB design screenshot from KiCad](http://users.abo.fi/jskata/JEDAC/kicad2.png "PCB design screenshot from KiCad")
+![PCB design screenshot from KiCad](img/kicad2.png "PCB design screenshot from KiCad")
 PCB design screenshot from KiCad.
 
 Please review the design in KiCad (2013-may-18)-stable, picture only for illustrational purpose.
@@ -114,36 +114,36 @@ NOTE: Design has to be printed mirrored for toner transfer. Please ensure you ge
 
 ### Construction
 
-![](http://users.abo.fi/jskata/JEDAC/build1.jpg)
+![](img/build1.jpg)
 Designed the PCB to fit in a smallish box ([WCA-H2853](http://www.wishmaker.com.tw/cubecat/front/bin/ptlist.phtml?Category=218)).
 
-![](http://users.abo.fi/jskata/JEDAC/build2.jpg)
+![](img/build2.jpg)
 Toner transfer done with good results.
 
-![](http://users.abo.fi/jskata/JEDAC/build3.jpg)
+![](img/build3.jpg)
 Board etched and even the finest traces are intact.
 
-![](http://users.abo.fi/jskata/JEDAC/build4.jpg)
+![](img/build4.jpg)
 First surface mount components soldered; regulators that give 3.3V to DAC and -5V to opamp.
 
-![](http://users.abo.fi/jskata/JEDAC/build5.jpg)
+![](img/build5.jpg)
 All the necessary components soldered and plugged in for a first test - and it works!
 
 **Lesson of the day; electrolytic capacitors are bigger than you think.**
 
-![](http://users.abo.fi/jskata/JEDAC/build6.jpg)
+![](img/build6.jpg)
 All the surface mount chips soldered.
 
-![](http://users.abo.fi/jskata/JEDAC/build7.jpg)
+![](img/build7.jpg)
 Preparing the box.
 
-![](http://users.abo.fi/jskata/JEDAC/build8.jpg)
+![](img/build8.jpg)
 Board assembly completed with RCA jacks.
 
-![](http://users.abo.fi/jskata/JEDAC/build9.jpg)
+![](img/build9.jpg)
 Finished DAC with four identical outputs and Mini-USB input.
 
 ## Downloads
-[Schematic and PCB design in KiCad format.](http://users.abo.fi/jskata/JEDAC/JEDAC.tar.bz2)
-[Linux/ALSA /etc/asound.conf with softvol configured.](http://users.abo.fi/jskata/JEDAC/asound.conf)
+[Schematic and PCB design in KiCad format.](files/JEDAC.tar.bz2)
+[Linux/ALSA /etc/asound.conf with softvol configured.](files/asound.conf)
 
