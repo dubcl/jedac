@@ -144,6 +144,8 @@ Board assembly completed with RCA jacks.
 Finished DAC with four identical outputs and Mini-USB input.
 
 ## Downloads
+
 [Schematic and PCB design in KiCad format.](files/JEDAC.tar.bz2)
+
 [Linux/ALSA /etc/asound.conf with softvol configured.](files/asound.conf)
 
