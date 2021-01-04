@@ -1,6 +1,6 @@
 # JEDAC - yet another take on a DIY high-end USB Audio DAC
 
-## (THIS IS ONLY FOR PRESERVATION PURPOSE THE ORIGINAL URL IS img/ ALL CREDITS TO THE OWNER)
+## (THIS IS ONLY FOR PRESERVATION PURPOSE THE ORIGINAL URL IS http://users.abo.fi/jskata/JEDAC/ ALL CREDITS TO THE OWNER)
 
 If you are wondering what an Audio DAC is, this might not be the project page you are looking for.
 But for short, a DAC (Digital-Analog Converter) is a computer soundcard, in this case intended to give the maximal ([audiophile](https://en.wikipedia.org/wiki/Audiophile)) audio quality in terms of reconstruction accuracy, signal/noise level and channel separation.
